@@ -5,15 +5,18 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const [username, setusename] = useState("");
   const router = useRouter();
-  const data = UserInfo();
+  const {data,status} = UserInfo();
+  if(status === 'unauthenticated'){
+    router.push('/login');
+  }
   useEffect(() => {
-    setusename(data?.name?.split(' ')[0]);
+    setusename(data?.user?.name?.split(' ')[0]);
   }, [data])
   
 
   const UsernameForm = (e) => {
     e.preventDefault();
-    if (data === 'Loading Data') return;
+    if (data === 'loading') return;
     fetch('api/user/' + data.user.id, {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },

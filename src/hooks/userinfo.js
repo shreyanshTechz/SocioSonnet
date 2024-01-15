@@ -7,9 +7,9 @@ export default function UserInfo() {
   const [user,setuser] = useState({});
   
   
-  function getUserinfo() {
+  async function getUserinfo() {
     if (data === null | data === undefined) return;
-    fetch('api/user/' + data.user.id).then((res)=>{
+    await fetch('/api/user/' + data.user.id).then((res)=>{
       res.json().then(json=>{
         setuser(json);
       })
@@ -19,6 +19,6 @@ export default function UserInfo() {
       getUserinfo();
     }, [data])
     if(status === 'loading')
-        return 'Loading Data'
-    return user;
+        return 'loading'
+    return {data,status};
   }

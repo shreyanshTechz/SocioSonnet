@@ -3,7 +3,7 @@ import { User } from "@/models/user";
 import { connect } from "mongoose";
 import { NextRequest,NextResponse } from "next/server";
 
-Connect();
+
 
 export async function POST(requests) { 
     const body = await requests.json();

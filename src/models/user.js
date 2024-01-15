@@ -20,6 +20,8 @@ const userSchema = new Schema({
   password: {
     type: Schema.Types.String,
   },
+  bio:{type:String},
+  cover:{type:String},
   avtar: {
     required: false,
     type: Schema.Types.String,

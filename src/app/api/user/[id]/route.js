@@ -2,9 +2,10 @@ import Connect from "@/database/mongo.config";
 import { User } from "@/models/user";
 import { NextResponse } from "next/server";
 
-Connect();
+
 
 export async function GET(requests){
+    await Connect();
     const id = requests.url.split("user/")[1];
     const user = await User.findById(id);
     return NextResponse.json(user);
