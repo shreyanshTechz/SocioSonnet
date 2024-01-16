@@ -8,8 +8,7 @@ const handler = NextAuth({
     providers: [
       GoogleProvider({
         clientId: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        checks: ['none']
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET
       }),
     ],
     pages: {
@@ -20,8 +19,11 @@ const handler = NextAuth({
     },
     secret:process.env.SECRET,
     callbacks: {
-      async session({ session, token, user }) {
-        return session
+      session: async ({token,session}) => {
+        if (session?.user && token?.sub) {
+          session.user.id = token.sub;
+        }
+        return session;
       },
     },
 })
