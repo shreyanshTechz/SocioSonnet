@@ -6,6 +6,7 @@ import { NextResponse } from "next/server";
 
 
 export async function GET(requests){
+    await Connect();
     const id = await requests.url.split("reply/")[1];
     console.log(id);
     const res = await Post.find({parent:id}).populate('author');

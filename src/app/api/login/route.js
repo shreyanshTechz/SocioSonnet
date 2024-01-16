@@ -6,6 +6,7 @@ import { NextRequest,NextResponse } from "next/server";
 
 
 export async function POST(requests) { 
+    await Connect();
     const body = await requests.json();
     const user = await new User({
         name:body.name,

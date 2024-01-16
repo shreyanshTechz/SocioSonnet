@@ -5,6 +5,7 @@ import { NextResponse } from "next/server";
 
 
 export async function GET(requests){
+    await Connect();
     const id = requests.url.split("user/")[1];
     const user = await User.findById(id);
     return NextResponse.json(user);
