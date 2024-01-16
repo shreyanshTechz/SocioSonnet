@@ -14,7 +14,7 @@ export default function Homes() {
     const [likedpost, setlikedpost] = useState([]);
 
     async function getPosts() {
-        await fetch('/api/posts').then((res) => {
+        await fetch('/api/allpost').then((res) => {
             res.json().then((json) => {
                 setposts(json);
             })
