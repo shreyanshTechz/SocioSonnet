@@ -1,8 +1,7 @@
-'use-client'
-import Connect from "@/database/mongo.config";
-import UserInfo from "@/hooks/userinfo";
+
+
 import Like from "@/models/likes";
-import  Post  from "@/models/posts";
+
 import { NextResponse } from "next/server";
 
 

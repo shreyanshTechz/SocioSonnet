@@ -1,4 +1,4 @@
-'use-client'
+
 import Follow from "@/models/follow";
 import { NextResponse } from "next/server";
 
