@@ -4,6 +4,6 @@ import { NextResponse } from "next/server";
 
 
 export async function GET(){
-    const res = await Post.find({parent:null}).populate('author').sort({createdAt:-1}).limit(20);
+    const res = await Post.find().populate('author').sort({createdAt:-1}).limit(20);
     return NextResponse.json(res);
 }
