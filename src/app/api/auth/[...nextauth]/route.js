@@ -19,11 +19,8 @@ const handler = NextAuth({
     },
     secret:process.env.SECRET,
     callbacks: {
-      session: async ({token,session}) => {
-        if (session?.user && token?.sub) {
-          session.user.id = token.sub;
-        }
-        return session;
+      async session({ session, token, user }) {
+        return session
       },
     },
 })
