@@ -1,5 +1,5 @@
 
-
+import Connect from "@/database/mongo.config";
 import Like from "@/models/likes";
 
 import { NextResponse } from "next/server";
@@ -7,6 +7,7 @@ import { NextResponse } from "next/server";
 
 
 export async function GET(requests){
+    await Connect();
     const userid = await requests.url.split("liked/")[1];
     const postliked = await Like.find({author:userid});
     const islikedbyme = postliked.map(like=>like.post);
