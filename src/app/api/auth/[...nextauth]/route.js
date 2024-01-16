@@ -14,7 +14,10 @@ const handler = NextAuth({
     pages: {
       signIn: '/login',
     },
-    
+    session: {
+      strategy: 'jwt',
+    },
+    secret:process.env.SECRET,
     callbacks: {
       session: async ({token,session}) => {
         if (session?.user && token?.sub) {
