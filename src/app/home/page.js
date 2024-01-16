@@ -14,14 +14,14 @@ export default function Homes() {
     const [likedpost, setlikedpost] = useState([]);
 
     async function getPosts() {
-        await fetch('api/posts/').then((res) => {
+        await fetch('/api/posts/').then((res) => {
             res.json().then((json) => {
                 setposts(json);
             })
         });
     }
     async function getLikedPost() {
-        await fetch('api/liked/' + user.id).then((res) => {
+        await fetch('/api/liked/' + user.id).then((res) => {
             res.json().then(json => {
                 setlikedpost(json);
             })
