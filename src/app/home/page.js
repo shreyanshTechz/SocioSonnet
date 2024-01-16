@@ -51,6 +51,11 @@ export default function Homes() {
     const [Text, setText] = useState("")
     const handleSubmit = async (e) => {
         e.preventDefault();
+        alert(Text);
+        if(Text.length <= 5){
+            alert('Tweet must be of greater length');
+            return;
+        }
         await axios.post('/api/posts/' + user.id, JSON.stringify({Text}));
         setText('');
         getPosts();
@@ -68,7 +73,7 @@ export default function Homes() {
                     </div>
 
                     <div className='grow pl-2 '>
-                        <input value={Text} onChange={(e) => setText(e.target.value)} className='w-full p-2 bg-transparent text-gWhite h-2/3 ' placeholder="What's In your Mind" />
+                        <textarea value={Text} onChange={(e) => setText(e.target.value)} className='w-full p-2 bg-transparent text-gWhite h-1/3 whitespace-pre-wrap' placeholder="What's In your Mind" />
                         <div className="text-right border-t border-gBorder pt-2">
                             <button onClick={handleSubmit} className="bg-gBlue m-2 text-white px-5 py-1 rounded-full">Tweet</button>
                         </div>

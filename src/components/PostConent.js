@@ -25,7 +25,7 @@ export default function PostConent({user, post, big,likedbyme }) {
                     </div>
                     <div>
                         {!big && (<div>
-                            <Link href={`/tweet/${post._id}`}>
+                            <Link className='whitespace-break-spaces' href={`/tweet/${post._id}`}>
                                 {post.text}
                             </Link>
                             <PostButtons postid={post?._id} userid={(user?.id)?user?.id:user._id} LikeCount={post?.likeCount} replyCount={post?.replyCount} likedByMe={likedbyme}/>
