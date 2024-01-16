@@ -16,6 +16,7 @@ export async function GET(requests){
 
 
 export async function POST(requests){
+    await Connect();
     const id = await requests.url.split("posts/")[1];
     const {Text,postid} = await requests.json();
     const res = await Post.create({

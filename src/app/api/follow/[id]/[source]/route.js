@@ -1,10 +1,12 @@
 
+import Connect from "@/database/mongo.config";
 import Follow from "@/models/follow";
 import { NextResponse } from "next/server";
 
 
 
 export async function GET(requests,params){
+    await Connect();
     const {source,id} = await params.params;
     console.log(params);
     const res = await Follow.findOne({

@@ -13,6 +13,7 @@ async function updateLike(postId) {
 
 
 export async function POST(requests){
+    await Connect();
     const userid = await requests.url.split("/").reverse()[0];
     const postid = await requests.url.split("/").reverse()[1];
    

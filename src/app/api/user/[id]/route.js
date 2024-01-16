@@ -12,6 +12,7 @@ export async function GET(requests){
 }
 
 export async function PUT(requests){
+    await Connect();
     const id = await requests.url.split("user/")[1];
     const username =await requests.json();
     const user = await User.findByIdAndUpdate(id,{username:username}, { new: true });

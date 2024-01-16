@@ -14,6 +14,7 @@ export async function GET(requests){
 }
 
 export async function PUT(requests){
+    await Connect();
     const {bio,name,username} = await requests.json();
     console.log(bio);
     const id = await requests.url.split("profile/")[1];
