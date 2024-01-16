@@ -55,9 +55,11 @@ export default function Homes() {
             alert('Tweet must be of greater length');
             return;
         }
-        await axios.post('/api/posts/' + user.id, JSON.stringify({Text}));
+        await axios.post('/api/posts/' + user.id, JSON.stringify({Text})).then(()=>{
+            getPosts();
+        });
         setText('');
-        getPosts();
+        
     }
 
     return (
