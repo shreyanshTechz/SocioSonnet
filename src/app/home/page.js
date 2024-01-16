@@ -51,7 +51,6 @@ export default function Homes() {
     const [Text, setText] = useState("")
     const handleSubmit = async (e) => {
         e.preventDefault();
-        alert(Text);
         if(Text.length <= 5){
             alert('Tweet must be of greater length');
             return;

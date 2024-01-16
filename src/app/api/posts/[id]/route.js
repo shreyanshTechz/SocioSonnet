@@ -17,7 +17,6 @@ export async function GET(requests){
 export async function POST(requests){
     const id = await requests.url.split("posts/")[1];
     const {Text,postid} = await requests.json();
-    console.log(Text);
     const res = await Post.create({
         author : id,
         text : Text,
