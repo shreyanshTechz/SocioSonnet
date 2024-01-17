@@ -22,12 +22,12 @@ Socio-Sonnet is a Twitter clone project built with Next.js 14, Tailwind CSS, and
 * Clone the repository:
 
 ```
-git clone https://github.com/your-username/socio-sonnet.git
+git clone https://github.com/shreyanshTechz/SocioSonnet.git
 ```
 
 * Navigate to the project directory:
 ```
-cd socio-sonnet
+cd SocioSonnet
 ```
 * Install dependencies:
 ```
