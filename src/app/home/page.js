@@ -87,7 +87,7 @@ export default function Homes() {
             </form>
             <div className="">
                 {posts && posts.map((post, index) => {
-                    return <div key={index} className="text-white border-t border-gBorder p-5">
+                    return <div key={index} className="border-t border-gBorder p-5">
                         <PostConent user={user} post={post} big={false} likedbyme={likedpost.includes(post._id)}/>
                     </div>
                 })}
