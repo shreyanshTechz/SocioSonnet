@@ -4,8 +4,6 @@ import { NextResponse } from "next/server";
 
 export const dynamic = 'force-dynamic'
 export async function GET(requests){
-    const x = requests.url();
-    console.log(x);
     await Connect();
     const res = await Post.find({author:null}).populate('author').sort({createdAt:-1}).limit(20).exec();
     return NextResponse.json(res);
