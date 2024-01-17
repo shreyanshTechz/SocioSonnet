@@ -71,7 +71,7 @@ export default function Tweet({ params }) {
               </div>
 
               <div className='grow pl-2'>
-                <input value={Text} onChange={(e) => setText(e.target.value)} className='w-full p-2  py-5 bg-transparent text-gWhite h-full ' placeholder="Reply To Tweet.." />
+                <input value={Text} onChange={(e) => setText(e.target.value)} className='w-full p-2  py-5 bg-transparent h-full ' placeholder="Reply To Tweet.." />
 
               </div>
               <div className="text-right  ">
