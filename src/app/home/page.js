@@ -33,13 +33,16 @@ export default function Homes() {
     }
 
     useEffect(() => {
-        if (data)
-        setuser(data.user);
+        if (data){
+            setuser(data.user);
+            getPosts();
+        }
+        
     }, [data])
 
-    useEffect(() => {
-        getPosts();
-    }, [])
+    // useEffect(() => {
+    //     getPosts();
+    // }, [])
 
 
     useEffect(() => {
